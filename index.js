@@ -11,7 +11,7 @@ function update() {
 		alert("Webhook link is empty!");
 	}
 	games.forEach( (element) => {
-		$.get("http://api.steampowered.com/ISteamNews/GetNewsForApp/v0002/?appid="+element+"&count=3&maxlength=300&format=json", (data) => {
+		$.get("http://api.steampowered.com/ISteamNews/GetNewsForApp/v0002/?appid=381210"+element+"&count=3&maxlength=300&format=json", (data) => {
 			let description = data.appnews.newsitems[0].contents;
 			description = description.replace(/<[^>]*>/g, '');
 			localStorage.setItem("webhookURL", url);
